@@ -25,7 +25,7 @@ function setup() {
   button = createButton("Submit");
   button.position(windowWidth/4, 180);
   button.size(80, 40);
-  button.mousePressed(readLine);
+  button.mousePressed(handleInput);
   textAlign(CENTER);
   textSize(50);
 
@@ -47,16 +47,21 @@ function windowResized() {
 
 //-----------------------------------------------------------
 //HANDLING THE USER INPUT
-
-function readLine() {
-  //TEST HTML CHANGING
+function handleInput() {
   userString1 = userLine1.value()
   userString2 = userLine2.value()
+
   var x = generateRapLines()
   updateBars(0, userString1, x[0], x[1], x[2])
 
   var y = generateRapLines()
   updateBars(1, userString2, y[0], y[1], y[2])
+
+  var w = generateRapLines()
+  updateBars(2, userString1, w[0], w[1], w[2])
+
+  var z = generateRapLines()
+  updateBars(3, userString2, z[0], z[1], z[2])
 }
 
 
@@ -64,10 +69,19 @@ function readLine() {
 function generateRapLines()
 {
   var lines = []
+//"dt nn vbd dt nn !"
+  var testS1 = RiTa.randomWord("dt") + " " + RiTa.randomWord("nn")
+  + " " + RiTa.randomWord("vbd") + " " + RiTa.randomWord("dt")
+  + " " + RiTa.randomWord("nn")
 
-  var testS1 = "ooga"
-  var testS2 = "booga"
-  var testS3 = "doo"
+  var testS2 = RiTa.randomWord("dt") + " " + RiTa.randomWord("nn")
+  + " " + RiTa.randomWord("vbd") + " " + RiTa.randomWord("dt")
+  + " " + RiTa.randomWord("nn")
+
+  var testS3 = RiTa.randomWord("dt") + " " + RiTa.randomWord("nn")
+  + " " + RiTa.randomWord("vbd") + " " + RiTa.randomWord("dt")
+  + " " + RiTa.randomWord("nn")
+  
   lines.push(testS1)
   lines.push(testS2)
   lines.push(testS3)
