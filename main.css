@@ -1,11 +1,42 @@
 body {
-  background: #B993D6;
-  background: -webkit-linear-gradient(to right, #8CA6DB, #B993D6);
-  background: linear-gradient(to right, #8CA6DB, #B993D6);
-  align-items: center;
-  align-content: center;
+  background-image: linear-gradient(to right bottom, #460d45, #3d0c35, #330b27, #270b1b, #1c0711, #18070f, #14080c, #0e080a, #150e11, #191217, #1d161d, #211a23);
+  background-repeat: no-repeat;
+  background-size: auto;
   margin: auto;
   text-align: center;
+}
+
+h1 {
+  font-size: 40px;
+  align-self: center;
+  display: inline-block;
+  color: white
+}
+
+input {
+  border-radius: 30px;
+  color: #ccc;
+  background: none;
+  text-align: center;
+  border: 2px solid #00FFFF;
+  font-size: 18px;
+}
+
+*:focus {
+  outline: none;
+}
+
+button {
+  border-radius: 10px;
+  color: #fff;
+  background: none;
+  text-align: center;
+  border: 2px solid #CC00FF;
+  font-size: 18px;
+}
+
+button:hover {
+  background-color: #CC00FFbb
 }
 
 #linesIn {
@@ -28,14 +59,16 @@ h3 {
   margin: auto;
   display: inline-block;
   padding: 0;
+  margin-top: 5%;
   border-radius: 20px;
   font-family: courier, monospace;
   border-style: outset;
-  border-width: 2px;
-  border-color: black;
+  border-width: 3px;
+  border-color: #fff;
   -webkit-box-shadow: -8px 9px 22px -2px rgba(43, 43, 43, 0.92);
   -moz-box-shadow: -8px 9px 22px -2px rgba(43, 43, 43, 0.92);
   box-shadow: -8px 9px 22px -2px rgba(43, 43, 43, 0.92);
+  opacity: 0
 }
 
 #list {
