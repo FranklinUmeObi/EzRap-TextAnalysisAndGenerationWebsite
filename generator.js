@@ -112,8 +112,11 @@ function createLine2(bar) {
   }
   if(rhymeSize > 1) s.push(RiTa.rhymes(toRhyme)[num]);
   else s.push(RiTa.similarBySound(toRhyme)[num]);
-
   ans = RiTa.untokenize(s);
+  let abc = RiTa.getSyllables(ans);
+
+  let numS = numSyl(abc)
+  if(numS > 7) ans = createLine2(bar)
   return ans;
 }
 
@@ -123,6 +126,10 @@ function createLine3(bar) {
   let s = [];
   for (var i = 0; i < x.length; i++) s.push(RiTa.randomWord(x[i]));
   ans = RiTa.untokenize(s);
+  let abc = RiTa.getSyllables(ans);
+
+  let numS = numSyl(abc)
+  if(numS > 8) ans = createLine3(bar)
   return ans;
 }
 
@@ -166,6 +173,10 @@ function createLine4(bar, lastLine) {
   else s.push(RiTa.similarBySound(toRhyme)[num]);
 
   ans = RiTa.untokenize(s);
+  let abc = RiTa.getSyllables(ans);
+
+  let numS = numSyl(abc)
+  if(numS > 9) ans = createLine4(bar, lastLine)
   return ans;
 }
 
@@ -193,4 +204,16 @@ function styleUserInput(a, b, c) {
   a.center("horizontal");
   b.center("horizontal");
   c.center("horizontal");
+}
+
+
+function numSyl(string){
+  let s = string.split("");
+  let num = 0
+
+  for (var i = 0; i < s.length; i++)
+  {
+    if(s[i] == "/" || s[i] == " ") num += 1
+  }
+  return num
 }
